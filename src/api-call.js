@@ -1,17 +1,7 @@
 //This method loads the exercises from the api to be processed by the server
 require('dotenv').config()
 const getPost = () => {
-    fetch(process.env.MONGODB_URI, {
-    method: 'GET',
-    credentials: 'same-origin',
-    redirect: 'follow',
-    agent: null,
-    headers: {
-        "Content-Type": "text/plain",
-        'Authorization': 'Basic ' + btoa('username:password'),
-    },
-    timeout: 5000
-    })
+    fetch(process.env.MONGODB_URI)
     .then(response => response.json())
     .then(data => console.log(data))
 };
