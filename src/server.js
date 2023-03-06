@@ -22,6 +22,7 @@ app.listen(3000, () => console.log('Server Started'))
 
 const port = process.env.PORT || process.env.NODE_PORT || 3001;
 const onRequest = (request, response) => {
+    credentials: 'include'
     //parses url and recieves paremeters if present
     const url = new URL(`localhost:3000${request.url}`)
     if(url.searchParams.has("username") && url.searchParams.has("exercise")){
