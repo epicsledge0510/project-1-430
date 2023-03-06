@@ -1,7 +1,7 @@
 //This method loads the exercises from the api to be processed by the server
 require('dotenv').config()
 const getPost = () => {
-    fetch(process.env.MONGODB_URI)
+    fetch(`http://localhost:3000/exercises/`)
     .then(response => response.json())
     .then(data => console.log(data))
 };
@@ -11,7 +11,7 @@ const makePost = async (name, exercise) => {
         name: name,
         exercise: exercise,
     }
-    await fetch(process.env.MONGODB_URI, {
+    await fetch(`http://localhost:3000/exercises/`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
