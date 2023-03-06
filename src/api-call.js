@@ -1,6 +1,6 @@
 //This method loads the exercises from the api to be processed by the server
 const getPost = () => {
-    fetch(`http://localhost:3000/exercises/`)
+    fetch(`https://radiant-mesa-08758.herokuapp.com/exercises/`)
         .then(response => response.json())
         .then(data => console.log(data))
 };
@@ -10,7 +10,7 @@ const makePost = async (name, exercise) => {
         name: name,
         exercise: exercise,
     }
-    await fetch('http://localhost:3000/exercises/', {
+    await fetch('https://radiant-mesa-08758.herokuapp.com/exercises/', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
