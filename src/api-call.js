@@ -1,6 +1,7 @@
 //This method loads the exercises from the api to be processed by the server
+require('dotenv').config()
 const getPost = () => {
-    fetch(`https://radiant-mesa-08758.herokuapp.com/exercises/`)
+    fetch(process.env.MONGODB_URI)
         .then(response => response.json())
         .then(data => console.log(data))
 };
@@ -10,7 +11,7 @@ const makePost = async (name, exercise) => {
         name: name,
         exercise: exercise,
     }
-    await fetch('https://radiant-mesa-08758.herokuapp.com/exercises/', {
+    await fetch(process.env.MONGODB_URI, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
