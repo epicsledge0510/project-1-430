@@ -1,0 +1,15 @@
+GET http://localhost:3000/exercises
+
+###
+
+GET http://localhost:3000/exercises/12
+
+###
+
+POST http://localhost:3000/exercises
+Content-Type: application/json
+
+{
+    "name": "Andrew",
+    "exercise": "3x10 Leg press"
+}
