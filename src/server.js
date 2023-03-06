@@ -6,7 +6,7 @@ const http = require('http');
 const htmlHandler = require(`./htmlResponses.js`);
 const apiHandler = require(`./api-call.js`);
 //creates and connects to the api
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Conntected to Database'))
