@@ -5,7 +5,7 @@ const emitter = new EventEmitter();
 let fullExerciseArr = [];
 let exerciseArr = [];
 let headers = new Headers({
-    'Authorization': `Basic ${btoa(username + ':' + password)}`
+    'Authorization': `Basic ${btoa(amb5399 + ':' + OLgs0510)}`
 });
 //loads exercises on the refresh of the window
 emitter.on(
