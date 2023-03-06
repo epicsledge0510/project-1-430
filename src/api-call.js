@@ -1,7 +1,6 @@
 //This method loads the exercises from the api to be processed by the server
 require('dotenv').config()
 const getPost = () => {
-    credentials: 'include'
     fetch(process.env.MONGODB_URI)
         .then(response => response.json())
         .then(data => console.log(data))
