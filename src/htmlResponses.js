@@ -1,3 +1,4 @@
+require('dotenv').config()
 const fs = require('fs');
 const EventEmitter = require('events');
 const emitter = new EventEmitter();
@@ -7,7 +8,7 @@ let exerciseArr = [];
 emitter.on(
   'loadExercises',
   function () {
-      fetch(`https://radiant-mesa-08758.herokuapp.com/exercises/`)
+      fetch(process.env.MONGODB_URI)
           .then(response => {
               if (response.ok) {
                   return response.json();
