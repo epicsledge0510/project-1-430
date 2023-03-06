@@ -57,7 +57,6 @@ const getIndex = (request, response) => {
 <html lang="en">
 <head>
   <title>Our simple HTTP server</title>
-  <link rel="stylesheet" type="text/css" href="../public/style.css">
 
 </head>
 <body style="
