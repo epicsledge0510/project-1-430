@@ -7,7 +7,7 @@ let exerciseArr = [];
 emitter.on(
   'loadExercises',
   function () {
-      fetch(`http://localhost:3000/exercises/`)
+      fetch(`https://radiant-mesa-08758.herokuapp.com/exercises/`)
           .then(response => {
               if (response.ok) {
                   return response.json();
