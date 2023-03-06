@@ -4,11 +4,14 @@ const EventEmitter = require('events');
 const emitter = new EventEmitter();
 let fullExerciseArr = [];
 let exerciseArr = [];
+let headers = new Headers({
+    'Authorization': `Basic ${btoa(username + ':' + password)}`
+});
 //loads exercises on the refresh of the window
 emitter.on(
   'loadExercises',
   function () {
-      fetch(process.env.MONGODB_URI)
+      fetch(process.env.MONGODB_URI, {headers: headers})
           .then(response => {
               if (response.ok) {
                   return response.json();
