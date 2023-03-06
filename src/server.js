@@ -1,4 +1,4 @@
-//require('dotenv').config()
+require('dotenv').config()
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose')
@@ -6,7 +6,7 @@ const http = require('http');
 const htmlHandler = require(`./htmlResponses.js`);
 const apiHandler = require(`./api-call.js`);
 //creates and connects to the api
-mongoose.connect('https://radiant-mesa-08758.herokuapp.com/exercises')
+mongoose.connect(process.env.MONGODB_URI)
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Conntected to Database'))
